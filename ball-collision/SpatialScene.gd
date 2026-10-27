@@ -27,9 +27,9 @@ func _physics_process(delta):
 	var dist = s2.pos - s1.pos
 	if(norma(dist) <= sumOfR):
 		simulateBang(dist)
-	else:
-		s1.transform.origin = s1.pos
-		s2.transform.origin = s2.pos
+
+	s1.transform.origin = s1.pos
+	s2.transform.origin = s2.pos
 		
 func simulateBang(dist):
 	var n = dist / norma(dist)
