@@ -1,0 +1,11 @@
+# Godot 3 cache and C# build output
+.import/
+.mono/
+export.cfg
+export_presets.cfg
+*.translation
+
+# Archives and OS files
+*.zip
+.DS_Store
+Thumbs.db
