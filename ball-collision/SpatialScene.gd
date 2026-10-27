@@ -33,11 +33,15 @@ func _physics_process(delta):
 		
 func simulateBang(dist):
 	var n = dist / norma(dist)
-	var V1perp = s1.V * n
+	# rzut predkosci na normalna zderzenia (iloczyn skalarny)
+	var V1perp = n * s1.V.dot(n)
 	var V1parallel = s1.V - V1perp
-	var V2perp = s2.V * n
+	var V2perp = n * s2.V.dot(n)
 	var V2parallel = s2.V - V2perp
-	var deltaVperp = norma( V1perp - V2perp)
+	# predkosc zblizania sie kul wzdluz normalnej; <= 0 oznacza, ze juz sie oddalaja
+	var deltaVperp = (V1perp - V2perp).dot(n)
+	if deltaVperp <= 0:
+		return
 	var J = massZred * (e + 1) * deltaVperp
 	s1.V = s1.V - J / s1.mass * n
 	s2.V = s2.V + J / s2.mass * n
