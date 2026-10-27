@@ -1,7 +1,7 @@
 # Godot Physics Simulations
 
 A collection of small real-time physics and cellular-automata simulations written in **GDScript** for **Godot 3.x**.
-Built during the *Real-time Physics Simulation Programming* course (Game Development, Jagiellonian University).
+Built in **2023** (spring semester, March–May) during the *Real-time Physics Simulation Programming* course (Game Development, Jagiellonian University).
 
 Each folder is a standalone Godot project. The physics is implemented by hand (integration, forces, collision response, automata rules) instead of relying on Godot's built-in physics engine.
 
